@@ -8,7 +8,7 @@ on:
       - 'develop/**'
 
 env:
-  IMAGE_NAME: 1password-k8s-example
+  IMAGE_NAME: one-password-k8s-example
 
 jobs:
   build-and-publish:

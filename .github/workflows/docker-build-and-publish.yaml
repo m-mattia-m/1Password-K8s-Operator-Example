@@ -6,7 +6,7 @@ on:
       - created
 
 env:
-  IMAGE_NAME: 1password-k8s-example
+  IMAGE_NAME: one-password-k8s-example
   IMAGE_TAG: ${{ github.event.release.tag_name }} # eg. v0.0.1
   GH_USERNAME: m-mattia-m
 
