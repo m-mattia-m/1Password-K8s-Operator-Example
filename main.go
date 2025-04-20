@@ -25,17 +25,12 @@ func loadConfig() (*Config, error) {
 	v.SetConfigType("yaml")
 	v.AddConfigPath("./")
 
+	// Read environment variables
 	if _, err := os.Stat(".env"); err == nil {
 		if err := godotenv.Load(); err != nil {
 			log.Fatalf("Error loading .env file: %v", err)
 		}
 		log.Println(".env file loaded successfully")
-	}
-
-	// Read environment variables
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Failed to load .env configuration: %v", err)
 	}
 
 	// Read config file
