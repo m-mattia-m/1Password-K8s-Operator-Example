@@ -1,0 +1,19 @@
+name: Build docker image on push
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'develop/**'
+
+env:
+  IMAGE_NAME: 1password-k8s-example
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build image
+        run: docker build . --file ./.docker/Dockerfile --tag $IMAGE_NAME

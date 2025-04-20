@@ -1,0 +1,5 @@
+server:
+  port: 8086
+
+app:
+  name: "Config Example"
